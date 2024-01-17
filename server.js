@@ -31,7 +31,6 @@ app.get('/data/weather', (request, response) => {
         element.lat === lat ||
         element.lon === lon
     );
-
     let responseData = {};
 
     if(cityData) {
