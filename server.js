@@ -50,7 +50,7 @@ app.get('/data/weather', (request, response) => {
         };
     response.json(responseData);
     } else {
-        response.status(404).json({ message: 'City not found!' });
+        response.status(500).json({ error: 'City not found. Forecast will not be displayed!' });
     }
 
 });
