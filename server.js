@@ -21,7 +21,6 @@ class Forecast {
 
 }
 
-console.log('Hello! You have made the server!')
 
 app.get('/data/weather', (request, response) => {
 
@@ -36,9 +35,19 @@ app.get('/data/weather', (request, response) => {
     let responseData = {};
 
     if(cityData) {
+        console.log('Hello! You have made it to the server!')
+
+       let cityForecast = cityData.data.map((element, idx) => {
+           return new Forecast(element.valid_date, element.weather.description)
+           }
+        );
+          // console.log(cityForecast);
+
+        // let cityForecast = new Forecast(cityData.valid_date, cityData.weather.description)
+        // console.log("I the cityForecast Array", cityForecast)
         responseData = {
             message: 'You have hit weather!',
-            data: cityData
+            data: cityForecast,
         };
     response.json(responseData);
     } else {
