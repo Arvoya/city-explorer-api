@@ -22,7 +22,7 @@ class Forecast {
 }
 
 
-app.get('/data/weather', (request, response) => {
+app.get('/weather', (request, response) => {
 
     const { city, lat, lon } = request.query;
 
