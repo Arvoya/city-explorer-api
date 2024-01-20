@@ -52,4 +52,16 @@ Start time: 12:51pm
 
 Finish time: 5:52pm
 
-Actual time needed to complete: 5 hours 
+Actual time needed to complete: 5 hours
+
+---
+
+Movies: As a user of City Explorer, I want to see info about movies related to the city I searched, so that I can learn more about the destination.
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 6:42pm
+
+Finish time:
+
+Actual time needed to complete: 
