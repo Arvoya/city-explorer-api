@@ -15,7 +15,7 @@
 
 01-17-2024 - Server correct receives GET requests, and gives correct response with weather data (placeholder). 
 
-01-19-2024 - Application can now display a forecast.
+01-19-2024 - Application can now display a forecast, but only through a local server connection.
 
 ## Feature Log
 
