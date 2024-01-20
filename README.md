@@ -8,12 +8,14 @@
 ## Getting Started
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 
-## Architecture
+    ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 
 ## Change Log
 
 01-17-2024 - Server correct receives GET requests, and gives correct response with weather data (placeholder). 
+
+01-19-2024 - Application can now display a forecast.
 
 ## Feature Log
 
@@ -38,3 +40,15 @@ Start time: 10:57pm
 Finish time: 11:19am
 
 Actual time needed to complete: 22 minutes
+    
+--- 
+
+Weather (Live) - As a user of City Explorer, I want ot see weather info for the city I searched, so that I know how to pack for an upcoming trip 
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 12:51pm
+
+Finish time: 5:52pm
+
+Actual time needed to complete: 5 hours 
