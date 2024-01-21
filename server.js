@@ -4,12 +4,13 @@ const dotenv = require('dotenv');
 const express = require('express');
 const cors = require('cors');
 const axios = require('axios');
-const weather = require('./data/weather');
+// const weather = require('./data/weather');
 
 dotenv.config();
 
 const PORT = process.env.PORT;
 const WEATHER_API = process.env.WEATHER_API_KEY;
+const MOVIE_API = process.env.MOVIE_API_KEY;
 
 
 const app = express();
@@ -20,6 +21,18 @@ class Forecast {
     constructor(date, description) {
         this.date = date;
         this.description = description
+    }
+}
+
+class Movies {
+    constructor(title, overview, vote_average, vote_count, poster_path, popularity, released_date) {
+        this.title = title;
+        this.overview = overview;
+        this.average_votes = vote_average;
+        this.total_votes = vote_count;
+        this.image_url = poster_path;
+        this.populatiry = popularity;
+        this.released_on = released_date;
     }
 }
 
@@ -37,13 +50,6 @@ app.get('/weather', (request, response) => {
                 return new Forecast(element.datetime, element.weather.description);
             });
 
-            //
-            // const weatherData = {
-            //     date: weatherResponse.data.data[0].datetime,
-            //     description: weatherResponse.data.data[0].weather.description
-            // }
-            // console.log('THIS IS THE DATA I AM LOGGING!', weatherResponse.data.data.weather)
-            // console.log('I am the response! ', weatherResponse.data);
             response.json(cityForecast);
         }) .catch(error => {
             console.log(error.response);
@@ -55,8 +61,24 @@ app.get('/weather', (request, response) => {
             console.log('I am the object errorObject: ', errorObject);
             response.status(errorObject.status).json(errorObject);
     })
+    // response.json({message: 'hi the api has reached its limite, NO MOVIES'})
 
 });
+
+app.get('/movies', (request, response) => {
+    let value = Object.values(request.query)
+    console.log(value);
+    axios.get(`https://api.themoviedb.org/3/search/movie?query=${value}&api_key=${MOVIE_API}&include_adult=true&language=en-US&page=1`)
+        .then(movieResponse => {
+            // console.log(movieResponse.data.results)
+            let movieList = movieResponse.data.results.filter(element => element.poster_path).map((element) => {
+                return new Movies(element.title, element.overview, element.vote_average, element.vote_count, element.poster_path, element.popularity, element.release_date)
+            })
+            response.json(movieList)
+        }) .catch(error => {
+            console.log(error.response);
+    })
+})
 
 // A way for the server to stay on
 app.listen(PORT, () => {
