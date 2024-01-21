@@ -62,6 +62,6 @@ Estimate of time needed to complete: 1 hour
 
 Start time: 6:42pm
 
-Finish time:
+Finish time: 10:22pm
 
-Actual time needed to complete: 
+Actual time needed to complete: 3 hours (lots of time refactoring)

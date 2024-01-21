@@ -61,6 +61,7 @@ app.get('/weather', (request, response) => {
             console.log('I am the object errorObject: ', errorObject);
             response.status(errorObject.status).json(errorObject);
     })
+    // response.json({message: 'hi the api has reached its limite, NO MOVIES'})
 
 });
 
@@ -70,8 +71,8 @@ app.get('/movies', (request, response) => {
     axios.get(`https://api.themoviedb.org/3/search/movie?query=${value}&api_key=${MOVIE_API}&include_adult=true&language=en-US&page=1`)
         .then(movieResponse => {
             // console.log(movieResponse.data.results)
-            let movieList = movieResponse.data.results.map((element) => {
-                return new Movies(element.title, element.overview, element.vote_average, element.vote_count, element.poster_path, element.populatiry, element.release_date)
+            let movieList = movieResponse.data.results.filter(element => element.poster_path).map((element) => {
+                return new Movies(element.title, element.overview, element.vote_average, element.vote_count, element.poster_path, element.popularity, element.release_date)
             })
             response.json(movieList)
         }) .catch(error => {
