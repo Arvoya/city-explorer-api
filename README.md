@@ -65,3 +65,27 @@ Start time: 6:42pm
 Finish time: 10:22pm
 
 Actual time needed to complete: 3 hours (lots of time refactoring)
+
+---
+
+Publish: Deploy your server. As a user, I want to access the City Explorer application on the web, so that anyone can explore from anywhere.
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 4:45pm
+
+Finish time: 5:05pm
+
+Actual time needed to complete: 20 minutes
+
+---
+
+Refactor: Modularize the back-end codebase.
+
+Estimate of time needed to complete: 20 minutes
+
+Start time: 9:46pm
+
+Finish time: 10:37pm
+
+Actual time needed to complete: ~50 minutes
