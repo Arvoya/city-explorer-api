@@ -5,7 +5,6 @@ const express = require('express');
 const cors = require('cors');
 const weatherResponse = require('./lib/weather')
 const moviesResponse = require('./lib/movies')
-
 dotenv.config();
 
 const PORT = process.env.PORT;

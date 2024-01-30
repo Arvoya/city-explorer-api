@@ -89,3 +89,15 @@ Start time: 9:46pm
 Finish time: 10:37pm
 
 Actual time needed to complete: ~50 minutes
+
+---
+
+Performance: As a user, I want the application to work with recent results, so that I can see info without the app doing unnecessary API calls.
+
+Estimate of time needed to complete: 2 Hours
+
+Start time: 10:16pm
+
+Finish time: 
+
+Actual time needed to complete:  
