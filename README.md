@@ -96,8 +96,10 @@ Performance: As a user, I want the application to work with recent results, so t
 
 Estimate of time needed to complete: 2 Hours
 
-Start time: 10:16pm
+Start time: 10:16am
 
-Finish time: 
+Finish time: 12:20pm
 
-Actual time needed to complete:  
+Actual time needed to complete: ~2 hours
+
+---
